@@ -1,7 +1,10 @@
 # ViperTools
 
+Viper upload tool for malicious samples developed based on Python, supporting Python calls.
 
-Tools development based on https://github.com/viper-framework/viper
+使用Python开发的Viper恶意样本批量上传工具，支持Python调用。
+
+https://github.com/viper-framework/viper
 
 
 
@@ -9,13 +12,23 @@ Tools development based on https://github.com/viper-framework/viper
 
 
 
+Python3
+
+
+
 ## Install:
+
+
+
+```shell
+git clone git@github.com:Loveforkeeps/ViperTools.git
+```
 
 
 
 ## Using:
 
-help：
+Help：
 
 ```shell
 ↳ python viper.py -h
@@ -34,13 +47,24 @@ optional arguments:
 
 
 
-config file demo：
+Config file Demo：
 
 ```ini
 [viper-web]
 host = 127.0.0.1
 port = 8080
 token  = xxxxxxx
+```
+
+
+
+Python Demo:
+
+```python
+from viper import Viper
+viper = Viper(url='https://127.0.0.1:8080', token='xxxxx')
+viper.debug = True
+viper.upload('Sample.exe', tags='Trojan', project='APT-12')
 ```
 
 
